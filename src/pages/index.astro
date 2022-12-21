@@ -1,15 +1,44 @@
 ---
+import moment from "moment";
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+  return a;
+}
+const members = [
+  "Stefanos",
+  "Yigit",
+  "Iryna P",
+  "Yuliya",
+  "Hasan",
+  "Krystyna",
+  "Thomas",
+  "Anna",
+  "Olga",
+  "Elisa",
+  "Niko",
+  "Iryna Z",
+  "Uli",
+];
+shuffle(members);
+const today = moment().format("MMMM Do YYYY");
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>TS Order</title>
+  </head>
+  <body class="bg-colored-700 text-colored-100 flex flex-col items-center justify-center mt-24">
+    <h1 class="text-3xl p-8">TS order on {today}</h1>
+    <ol class="list-decimal">{members.map((member) => <li class="pl-2">{member}</li>)}</ol>
+  </body>
 </html>
