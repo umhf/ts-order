@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { schedule } from '@netlify/functions'
+/* import { schedule } from '@netlify/functions' */
 
 const BUILD_HOOK =
   'https://api.netlify.com/build_hooks/63a2ddb7e4e1fa618caa335e'
